@@ -1,4 +1,7 @@
 # CiotEFrete
+
+[![Nuget count](http://img.shields.io/nuget/v/CiotEFrete.svg)](https://www.nuget.org/packages/CiotEFrete/)CiotEFrete
+
 Biblioteca para consumo do webservice do Ciot da empresa e-Frete (atualizado na versão 6.0).
 
 Biblioteca construída em C# com o VS2019. Plataforma .Net Standard 2.0. Demo desenvolvido em .Net 3.1
