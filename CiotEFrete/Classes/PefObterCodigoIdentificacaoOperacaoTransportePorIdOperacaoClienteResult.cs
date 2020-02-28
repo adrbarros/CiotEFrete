@@ -59,21 +59,21 @@ namespace CiotEFrete.Classes
             {
                 switch (EstadoCiot)
                 {
-                    case EstadoCiot.EmViagem: return "Em Viagem";
+                    case EstadoCiot.EmViagem: return "EmViagem";
                     case EstadoCiot.Encerrado: return "Encerrado";
                     case EstadoCiot.Cancelado: return "Cancelado";
-                    default: throw new NotImplementedException("Estado do CIOT não implementado");
+                    default: throw new NotImplementedException($"Estado do CIOT não implementado - \"{EstadoCiot}\"");
                 }
             }
 
             set
             {
-                switch (value.ToLower())
+                switch (value.Trim().ToLower())
                 {
-                    case "em viagem": EstadoCiot = EstadoCiot.EmViagem; break;
+                    case "emviagem": EstadoCiot = EstadoCiot.EmViagem; break;
                     case "encerrado": EstadoCiot = EstadoCiot.Encerrado; break;
                     case "cancelado": EstadoCiot = EstadoCiot.Cancelado; break;
-                    default: throw new NotImplementedException("Estado do CIOT não implementado");
+                    default: throw new NotImplementedException($"Estado do CIOT não implementado - \"{value}\"");
                 }
             }
         }
