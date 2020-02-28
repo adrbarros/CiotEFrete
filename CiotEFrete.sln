@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29613.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CiotEFrete", "CiotEFrete\CiotEFrete.csproj", "{740E5B3C-C76E-4E00-82DF-CA7CBBBF4F79}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CiotEFrete_Demo", "CiotEFrete_Demo\CiotEFrete_Demo.csproj", "{86CCF48D-2563-4A85-8DFC-EA56A08CA88F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{740E5B3C-C76E-4E00-82DF-CA7CBBBF4F79}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{740E5B3C-C76E-4E00-82DF-CA7CBBBF4F79}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{740E5B3C-C76E-4E00-82DF-CA7CBBBF4F79}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{740E5B3C-C76E-4E00-82DF-CA7CBBBF4F79}.Release|Any CPU.Build.0 = Release|Any CPU
+		{86CCF48D-2563-4A85-8DFC-EA56A08CA88F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86CCF48D-2563-4A85-8DFC-EA56A08CA88F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86CCF48D-2563-4A85-8DFC-EA56A08CA88F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86CCF48D-2563-4A85-8DFC-EA56A08CA88F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B03EC10E-1459-4094-BBE8-A4020B8E04F9}
+	EndGlobalSection
+EndGlobal
