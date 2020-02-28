@@ -4,6 +4,7 @@ Biblioteca para consumo do webservice do Ciot da empresa e-Frete (atualizado na 
 Biblioteca construída em C# com o VS2019. Plataforma .Net Standard 2.0. Demo desenvolvido em .Net 3.1
 
 Leia o manual e estude o Demo antes de consumir a biblioteca.
+
 Solicite o manual atualizado em: https://dev.efrete.com.br/Suporte/Novo
 
 ----
