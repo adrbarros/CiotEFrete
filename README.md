@@ -1,6 +1,6 @@
 # CiotEFrete
 
-[![Nuget count](http://img.shields.io/nuget/v/CiotEFrete.svg)](https://www.nuget.org/packages/CiotEFrete/)CiotEFrete
+[![Nuget count](http://img.shields.io/nuget/v/CiotEFrete.svg)](https://www.nuget.org/packages/CiotEFrete/)
 
 Biblioteca para consumo do webservice do Ciot da empresa e-Frete (atualizado na versão 6.0).
 
