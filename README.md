@@ -24,6 +24,6 @@ Agradecimento aos desenvolvedores responsáveis pela biblioteca:
 
 Marcos Gerene F. Spirito - https://github.com/marcosgerene
 
-Matheus Vinicius Coelho
+Matheus Vinicius Coelho - https://github.com/MatheusVCoelho97
 
 Rafael Teno Dias - https://github.com/rftd
