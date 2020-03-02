@@ -82,8 +82,8 @@ namespace CiotEFrete.Classes
         [DFeElement(TipoCampo.Str, "TipoPagamento", Ocorrencia = Ocorrencia.Obrigatoria, Ordem = 2)]
         public string TipoPagamentoProxy
         {
-            get => this.TipoPagamento == TipoPagamento.TransferenciaBancaria ? "TransferenciaBancaria" : "eFrete";
-            set => this.TipoPagamento = value == "eFrete" ? TipoPagamento.eFRETE : TipoPagamento.TransferenciaBancaria;
+            get => this.TipoPagamento == TipoPagamento.TransferenciaBancaria ? "TransferenciaBancaria" : "eFRETE";
+            set => this.TipoPagamento = value == "eFRETE" ? TipoPagamento.eFRETE : TipoPagamento.TransferenciaBancaria;
         }
 
         [DFeElement(TipoCampo.Str, "Integrador", Namespace = "http://schemas.ipc.adm.br/efrete/objects", Ocorrencia = Ocorrencia.Obrigatoria, Ordem = 2)]

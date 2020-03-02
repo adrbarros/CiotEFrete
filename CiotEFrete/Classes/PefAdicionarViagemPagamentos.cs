@@ -81,8 +81,8 @@ namespace CiotEFrete.Classes
         [DFeElement(TipoCampo.Str, "TipoPagamento", Ocorrencia = Ocorrencia.Obrigatoria, Ordem = 8)]
         public string TipoProxy
         {
-            get => this.Tipo == TipoPagamento.TransferenciaBancaria ? "TransferenciaBancaria" : "eFrete";
-            set => this.Tipo = value == "eFrete" ? TipoPagamento.eFRETE : TipoPagamento.TransferenciaBancaria;
+            get => this.Tipo == TipoPagamento.TransferenciaBancaria ? "TransferenciaBancaria" : "eFRETE";
+            set => this.Tipo = value == "eFRETE" ? TipoPagamento.eFRETE : TipoPagamento.TransferenciaBancaria;
         }
 
         [DFeElement(TipoCampo.De2, "Valor", Ocorrencia = Ocorrencia.Obrigatoria, Ordem = 9)]
