@@ -1,6 +1,7 @@
 ﻿using CiotEFrete;
 using CiotEFrete.Classes;
 using System;
+using System.Collections.Generic;
 using static CiotEFrete.Client;
 
 namespace CiotEFrete_Demo
@@ -269,23 +270,26 @@ namespace CiotEFrete_Demo
                     OutrosImpostos = 0,
                     DescricaoOutrosImpostos = "Nenhum"
                 },
-                Pagamentos = new PefAdicionarOperacaoTransportePagamentos()
-                {
-                    IdPagamentoCliente = "1",
-                    DataLiberacao = DateTime.Now,
-                    Valor = 250,
-                    Tipo = TipoPagamento.TransferenciaBancaria,
-                    Categoria = CategoriaPagamento.Adiantamento,
-                    Documento = "01234",
-                    InformacoesBancarias = new PefAdicionarOperacaoTransporteInformacoesBancarias()
+                Pagamentos = new List<PefAdicionarOperacaoTransportePagamentos>() {
+                    new PefAdicionarOperacaoTransportePagamentos()
                     {
-                        InstituicaoBancaria = "Sicoob",
-                        Agencia = "237",
-                        Conta = "21935"
-                    },
-                    InformacaoAdicional = "Alguma informação adicional aqui",
-                    CnpjFilialAbastecimento = "90657289000109"
-                },
+                        IdPagamentoCliente = "1",
+                        DataLiberacao = DateTime.Now,
+                        Valor = 250,
+                        Tipo = TipoPagamento.TransferenciaBancaria,
+                        Categoria = CategoriaPagamento.Adiantamento,
+                        Documento = "01234",
+                        InformacoesBancarias = new PefAdicionarOperacaoTransporteInformacoesBancarias()
+                        {
+                            InstituicaoBancaria = "Sicoob",
+                            Agencia = "237",
+                            Conta = "21935"
+                        },
+                        InformacaoAdicional = "Alguma informação adicional aqui",
+                        CnpjFilialAbastecimento = "90657289000109"
+                    }
+                }
+                ,
                 Contratado = new PefAdicionarOperacaoTransporteContratado()
                 {
                     CpfOuCnpj = "90657289000109",
@@ -448,24 +452,27 @@ namespace CiotEFrete_Demo
         {
             var pef = new PefAdicionarPagamentoRequest(client)
             {
-                 CodigoIdentificacaoOperacao = "1",
-                 Pagamentos = new PefAdicionarPagamentoPagamentos()
-                 {
-                     Categoria = CategoriaPagamento.Adiantamento,
-                     DataLiberacao = DateTime.Now,
-                     Documento = "Documento aqui",
-                     IdPagamentoCliente = "2",
-                     InformacaoAdicional = "Informação adicional aqui",
-                     CnpjFilialAbastecimento = "01234567000189",
-                     InformacoesBancarias = new PefAdicionarPagamentoInformacoesBancarias()
-                     {
-                         Agencia = "237",
-                         Conta = "219320",
-                         InstituicaoBancaria = "Sicoob"
-                     },
-                     Tipo = TipoPagamento.TransferenciaBancaria,
-                     Valor = 250
-                 }
+                CodigoIdentificacaoOperacao = "1",
+                Pagamentos = new List<PefAdicionarPagamentoPagamentos>()
+                {
+                    new PefAdicionarPagamentoPagamentos()
+                    {
+                        Categoria = CategoriaPagamento.Adiantamento,
+                        DataLiberacao = DateTime.Now,
+                        Documento = "Documento aqui",
+                        IdPagamentoCliente = "2",
+                        InformacaoAdicional = "Informação adicional aqui",
+                        CnpjFilialAbastecimento = "01234567000189",
+                        InformacoesBancarias = new PefAdicionarPagamentoInformacoesBancarias()
+                        {
+                            Agencia = "237",
+                            Conta = "219320",
+                            InstituicaoBancaria = "Sicoob"
+                        },
+                        Tipo = TipoPagamento.TransferenciaBancaria,
+                        Valor = 250
+                    }
+                }
             };
 
             var resposta = client.AdicionarPagamentoPef(pef);
@@ -505,7 +512,7 @@ namespace CiotEFrete_Demo
             var pef = new PefObterOperacaoTransportePdfRequest(client)
             {
                 CodigoIdentificacaoOperacao = "1",
-                DocumentoViagem = "O documento da viagem aqui"                
+                DocumentoViagem = "O documento da viagem aqui"
             };
 
             var resposta = client.ObterOperacaoTransportePdfPef(pef);
