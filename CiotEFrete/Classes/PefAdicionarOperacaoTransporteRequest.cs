@@ -201,7 +201,7 @@ namespace CiotEFrete.Classes
         [DFeElement("Impostos", Ocorrencia = Ocorrencia.Obrigatoria, Ordem = 16)]
         public PefAdicionarOperacaoTransporteImpostos Impostos { get; set; }
 
-        [DFeElement("Pagamentos", Namespace = "http://schemas.ipc.adm.br/efrete/pef/AdicionarOperacaoTransporte", Ocorrencia = Ocorrencia.Obrigatoria, Ordem = 17)]
+        [DFeCollection("Pagamentos", Namespace = "http://schemas.ipc.adm.br/efrete/pef/AdicionarOperacaoTransporte", Ocorrencia = Ocorrencia.Obrigatoria, Ordem = 17)]
         public List<PefAdicionarOperacaoTransportePagamentos> Pagamentos { get; set; }
 
         [DFeElement("Contratado", Namespace = "http://schemas.ipc.adm.br/efrete/pef/AdicionarOperacaoTransporte", Ocorrencia = Ocorrencia.Obrigatoria, Ordem = 18)]

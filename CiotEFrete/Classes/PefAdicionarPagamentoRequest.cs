@@ -44,8 +44,8 @@ namespace CiotEFrete.Classes
         [DFeElement(TipoCampo.Str, "Integrador", Namespace = "http://schemas.ipc.adm.br/efrete/objects", Ocorrencia = Ocorrencia.Obrigatoria, Ordem = 2)]
         public string Integrador { get; set; }
 
-        [DFeElement("Pagamentos", Namespace = "http://schemas.ipc.adm.br/efrete/objects", Ocorrencia = Ocorrencia.NaoObrigatoria, Ordem = 3)]
-        public List<PefAdicionarPagamentoPagamentos> Pagamentos { get; set; }
+        [DFeElement("Pagamentos", Namespace = "http://schemas.ipc.adm.br/efrete/pef/AdicionarPagamento", Ocorrencia = Ocorrencia.NaoObrigatoria, Ordem = 3)]
+        public PefAdicionarPagamentoPagamento Pagamentos { get; set; }
 
         [DFeElement(TipoCampo.Str, "Token", Namespace = "http://schemas.ipc.adm.br/efrete/objects", Ocorrencia = Ocorrencia.NaoObrigatoria, Ordem = 4)]
         public string Token { get; set; }

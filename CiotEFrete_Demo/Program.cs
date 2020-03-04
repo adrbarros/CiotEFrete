@@ -29,12 +29,12 @@ namespace CiotEFrete_Demo
                         throw new ArgumentException("O login não foi efetuado");
                 }
 
-                GravarMotorista(client);
-
                 GravarProprietario(client);
 
                 GravarVeiculo(client);
 
+                GravarMotorista(client);
+                                
                 AdicionarOperacaoTransportePef(client);
 
                 //AdicionarPagamentoPef(client);
@@ -60,46 +60,6 @@ namespace CiotEFrete_Demo
                 client.Logout();
             }
         }
-
-        #region GravarMotorista
-
-        private static bool GravarMotorista(Client client)
-        {
-            var motorista = new MotoristaGravarRequest(client)
-            {
-                Cpf = "65139029081",
-                Cnh = "12346589",
-                DataNascimento = new DateTime(1992, 12, 22),
-                Endereco = new Endereco()
-                {
-                    Bairro = "O Bairro aqui",
-                    Cep = "17300000",
-                    CodigoMunicipio = 3514106,
-                    Numero = "126",
-                    Rua = "Nome da Rua ou Avenida",
-                    Complemento = null
-                },
-                Nome = "Matheus",
-                NomeDeSolteiroDaMae = "Maria da Silva",
-                Telefones = new Telefones()
-                {
-                    Celular = new Telefone()
-                    {
-                        Ddd = "14",
-                        Numero = "997155215"
-                    }
-                }
-            };
-
-            var resposta = client.GravarMotorista(motorista);
-
-            if (!resposta.Sucesso)
-                throw new ArgumentException($"{resposta.Excecao.Codigo} - {resposta.Excecao.Mensagem}");
-
-            return resposta.Sucesso;
-        }
-
-        #endregion
 
         #region GravarProprietario
 
@@ -177,6 +137,46 @@ namespace CiotEFrete_Demo
 
         #endregion
 
+        #region GravarMotorista
+
+        private static bool GravarMotorista(Client client)
+        {
+            var motorista = new MotoristaGravarRequest(client)
+            {
+                Cpf = "65139029081",
+                Cnh = "12346589",
+                DataNascimento = new DateTime(1992, 12, 22),
+                Endereco = new Endereco()
+                {
+                    Bairro = "O Bairro aqui",
+                    Cep = "17300000",
+                    CodigoMunicipio = 3514106,
+                    Numero = "126",
+                    Rua = "Nome da Rua ou Avenida",
+                    Complemento = null
+                },
+                Nome = "Matheus",
+                NomeDeSolteiroDaMae = "Maria da Silva",
+                Telefones = new Telefones()
+                {
+                    Celular = new Telefone()
+                    {
+                        Ddd = "14",
+                        Numero = "997155215"
+                    }
+                }
+            };
+
+            var resposta = client.GravarMotorista(motorista);
+
+            if (!resposta.Sucesso)
+                throw new ArgumentException($"{resposta.Excecao.Codigo} - {resposta.Excecao.Mensagem}");
+
+            return resposta.Sucesso;
+        }
+
+        #endregion
+               
         #region AdicionarOperacaoTransportePef
 
         private static bool AdicionarOperacaoTransportePef(Client client)
@@ -453,24 +453,27 @@ namespace CiotEFrete_Demo
             var pef = new PefAdicionarPagamentoRequest(client)
             {
                 CodigoIdentificacaoOperacao = "1",
-                Pagamentos = new List<PefAdicionarPagamentoPagamentos>()
+                Pagamentos = new PefAdicionarPagamentoPagamento()
                 {
-                    new PefAdicionarPagamentoPagamentos()
+                    Pagamentos = new List<PefAdicionarPagamentoPagamentoDados>() 
                     {
-                        Categoria = CategoriaPagamento.Adiantamento,
-                        DataLiberacao = DateTime.Now,
-                        Documento = "Documento aqui",
-                        IdPagamentoCliente = "2",
-                        InformacaoAdicional = "Informação adicional aqui",
-                        CnpjFilialAbastecimento = "01234567000189",
-                        InformacoesBancarias = new PefAdicionarPagamentoInformacoesBancarias()
+                        new PefAdicionarPagamentoPagamentoDados()
                         {
-                            Agencia = "237",
-                            Conta = "219320",
-                            InstituicaoBancaria = "Sicoob"
-                        },
-                        Tipo = TipoPagamento.TransferenciaBancaria,
-                        Valor = 250
+                            Categoria = CategoriaPagamento.Adiantamento,
+                            DataLiberacao = DateTime.Now,
+                            Documento = "Documento aqui",
+                            IdPagamentoCliente = "2",
+                            InformacaoAdicional = "Informação adicional aqui",
+                            CnpjFilialAbastecimento = "01234567000189",
+                            InformacoesBancarias = new PefAdicionarPagamentoInformacoesBancarias()
+                            {
+                                Agencia = "237",
+                                Conta = "219320",
+                                InstituicaoBancaria = "Sicoob"
+                            },
+                            Tipo = TipoPagamento.TransferenciaBancaria,
+                            Valor = 250
+                        }
                     }
                 }
             };
