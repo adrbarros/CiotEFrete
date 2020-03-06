@@ -32,7 +32,7 @@ namespace CiotEFrete.Classes
                     case CategoriaPagamento.Adiantamento: return "Adiantamento";
                     case CategoriaPagamento.Estadia: return "Estadia";
                     case CategoriaPagamento.Quitacao: return "Quitacao";
-                    case CategoriaPagamento.SemCategoria: return "Sem Categoria (Livre)";
+                    case CategoriaPagamento.SemCategoria: return "SemCategoria";
                     default: throw new NotImplementedException("Categoria não implementada");
                 }
             }
@@ -44,7 +44,7 @@ namespace CiotEFrete.Classes
                     case "adiantamento": Categoria = CategoriaPagamento.Adiantamento; break;
                     case "estadia": Categoria = CategoriaPagamento.Estadia; break;
                     case "quitacao": Categoria = CategoriaPagamento.Quitacao; break;
-                    case "sem categoria": Categoria = CategoriaPagamento.SemCategoria; break;
+                    case "semcategoria": Categoria = CategoriaPagamento.SemCategoria; break;
                     default: throw new NotImplementedException("Categoria não implementada");
                 }
             }
