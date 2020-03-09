@@ -21,4 +21,5 @@ Newtonsoft.Json (MIT) >= 12.0.3 - https://github.com/JamesNK/Newtonsoft.Json
 ---
 
 O software para o qual a biblioteca foi criada passou por homologação junto á e-Frete em 07/03/2020, a biblioteca está apta para emissão normal em produção.
+
 Ainda não foi necessário homologação para TAC Agregado. Aguardamos contribuição para o mesmo.
