@@ -67,7 +67,7 @@ namespace CiotEFrete.Classes
                     case TipoPagamento.eFRETE: return "eFRETE";
                     case TipoPagamento.TransferenciaBancaria: return "TransferenciaBancaria";
                     case TipoPagamento.Outros: return "Outros";
-                    default: throw new NotImplementedException("Tipo de embalagem não implementado");
+                    default: throw new NotImplementedException("Tipo de pagamento não implementado");
                 }
             }
 
@@ -78,7 +78,7 @@ namespace CiotEFrete.Classes
                     case "efrete": TipoPagamento = TipoPagamento.eFRETE; break;
                     case "transferenciabancaria": TipoPagamento = TipoPagamento.TransferenciaBancaria; break;
                     case "outros": TipoPagamento = TipoPagamento.Outros; break;
-                    default: throw new NotImplementedException("Tipo de embalagem não implementado");
+                    default: throw new NotImplementedException("Tipo de pagamento não implementado");
                 }
             }
         }
