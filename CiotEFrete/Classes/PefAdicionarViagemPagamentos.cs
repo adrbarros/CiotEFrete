@@ -81,8 +81,27 @@ namespace CiotEFrete.Classes
         [DFeElement(TipoCampo.Str, "TipoPagamento", Ocorrencia = Ocorrencia.Obrigatoria, Ordem = 8)]
         public string TipoProxy
         {
-            get => this.Tipo == TipoPagamento.TransferenciaBancaria ? "TransferenciaBancaria" : "eFRETE";
-            set => this.Tipo = value == "eFRETE" ? TipoPagamento.eFRETE : TipoPagamento.TransferenciaBancaria;
+            get
+            {
+                switch (Tipo)
+                {
+                    case TipoPagamento.eFRETE: return "eFRETE";
+                    case TipoPagamento.TransferenciaBancaria: return "TransferenciaBancaria";
+                    case TipoPagamento.Outros: return "Outros";
+                    default: throw new NotImplementedException("Tipo de embalagem não implementado");
+                }
+            }
+
+            set
+            {
+                switch (value.ToLower())
+                {
+                    case "efrete": Tipo = TipoPagamento.eFRETE; break;
+                    case "transferenciabancaria": Tipo = TipoPagamento.TransferenciaBancaria; break;
+                    case "outros": Tipo = TipoPagamento.Outros; break;
+                    default: throw new NotImplementedException("Tipo de embalagem não implementado");
+                }
+            }
         }
 
         [DFeElement(TipoCampo.De2, "Valor", Ocorrencia = Ocorrencia.Obrigatoria, Ordem = 9)]

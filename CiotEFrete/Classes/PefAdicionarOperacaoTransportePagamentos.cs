@@ -14,7 +14,8 @@ namespace CiotEFrete.Classes
     public enum TipoPagamento
     {
         TransferenciaBancaria = 0,
-        eFRETE = 1
+        eFRETE = 1,
+        Outros = 2
     }
 
     public enum CategoriaPagamento
