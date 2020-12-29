@@ -57,7 +57,7 @@ namespace CiotEFrete.Classes
         [DFeIgnore]
         public TipoPagamento TipoPagamento { get; set; }
 
-        [DFeElement(TipoCampo.Str, "TipoPagamento", Ocorrencia = Ocorrencia.Obrigatoria, Ordem = 2)]
+        [DFeElement(TipoCampo.Str, "TipoPagamento", Namespace = "http://schemas.ipc.adm.br/efrete/pef/objects",  Ocorrencia = Ocorrencia.Obrigatoria, Ordem = 4)]
         public string TipoPagamentoProxy
         {
             get
