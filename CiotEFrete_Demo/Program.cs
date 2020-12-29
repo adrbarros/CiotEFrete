@@ -276,7 +276,7 @@ namespace CiotEFrete_Demo
                         IdPagamentoCliente = "1",
                         DataLiberacao = DateTime.Now,
                         Valor = 250,
-                        Tipo = TipoPagamento.TransferenciaBancaria,
+                        TipoPagamento = TipoPagamento.TransferenciaBancaria,
                         Categoria = CategoriaPagamento.Adiantamento,
                         Documento = "01234",
                         InformacoesBancarias = new PefAdicionarOperacaoTransporteInformacoesBancarias()
