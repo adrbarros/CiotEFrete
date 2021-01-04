@@ -14,7 +14,8 @@ namespace CiotEFrete.Classes
     public enum TipoPagamento
     {
         TransferenciaBancaria = 0,
-        eFRETE = 1
+        eFRETE = 1,
+        Outros = 2
     }
 
     public enum CategoriaPagamento
@@ -54,15 +55,34 @@ namespace CiotEFrete.Classes
         public decimal Valor { get; set; }
 
         [DFeIgnore]
-        public TipoPagamento Tipo { get; set; }
+        public TipoPagamento TipoPagamento { get; set; }
 
-        [DFeElement(TipoCampo.Str, "TipoPagamento", Namespace = "http://schemas.ipc.adm.br/efrete/pef/objects", Ocorrencia = Ocorrencia.Obrigatoria, Ordem = 4)]
-        public string TipoProxy
+        [DFeElement(TipoCampo.Str, "TipoPagamento", Namespace = "http://schemas.ipc.adm.br/efrete/pef/objects",  Ocorrencia = Ocorrencia.Obrigatoria, Ordem = 4)]
+        public string TipoPagamentoProxy
         {
-            get => this.Tipo == TipoPagamento.TransferenciaBancaria ? "TransferenciaBancaria" : "eFRETE";
-            set => this.Tipo = value == "eFRETE" ? TipoPagamento.eFRETE : TipoPagamento.TransferenciaBancaria;
+            get
+            {
+                switch (TipoPagamento)
+                {
+                    case TipoPagamento.eFRETE: return "eFRETE";
+                    case TipoPagamento.TransferenciaBancaria: return "TransferenciaBancaria";
+                    case TipoPagamento.Outros: return "Outros";
+                    default: throw new NotImplementedException("Tipo de pagamento não implementado");
+                }
+            }
+
+            set
+            {
+                switch (value.ToLower())
+                {
+                    case "efrete": TipoPagamento = TipoPagamento.eFRETE; break;
+                    case "transferenciabancaria": TipoPagamento = TipoPagamento.TransferenciaBancaria; break;
+                    case "outros": TipoPagamento = TipoPagamento.Outros; break;
+                    default: throw new NotImplementedException("Tipo de pagamento não implementado");
+                }
+            }
         }
-               
+
         [DFeIgnore]
         public CategoriaPagamento Categoria { get; set; }
 
