@@ -643,6 +643,20 @@ namespace CiotEFrete
                         }
                         break;
 
+                    case MetodoWebService.PefAdicionarViagem:
+                        using (var rqst = new PefServiceClient(_timeout))
+                        {
+                            try
+                            {
+                                XmlResposta = rqst.AdicionarViagemPef(xml);
+                            }
+                            finally
+                            {
+                                XmlEnvio = rqst.XmlEnvio;
+                            }
+                        }
+                        break;
+
                     default:
                         throw new NotImplementedException();
                 }

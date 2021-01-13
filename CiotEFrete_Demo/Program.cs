@@ -653,24 +653,24 @@ namespace CiotEFrete_Demo
                         TotalQuitacao = 0,
                         TotalOperacao = 0,
                         TotalViagem = 0
-                    },
-                    Pagamentos = new PefAdicionarViagemPagamentos()
+                    }                    
+                },
+                Pagamentos = new PefAdicionarViagemPagamentos()
+                {
+                    Categoria = CategoriaPagamento.Adiantamento,
+                    DataLiberacao = DateTime.Now,
+                    Documento = "Documento aqui",
+                    IdPagamentoCliente = "",
+                    InformacaoAdicional = "",
+                    CnpjFilialAbastecimento = "01234567000189",
+                    InformacoesBancarias = new PefAdicionarPagamentoInformacoesBancarias()
                     {
-                        Categoria = CategoriaPagamento.Adiantamento,
-                        DataLiberacao = DateTime.Now,
-                        Documento = "Documento aqui",
-                        IdPagamentoCliente = "",
-                        InformacaoAdicional = "",
-                        CnpjFilialAbastecimento = "01234567000189",
-                        InformacoesBancarias = new PefAdicionarPagamentoInformacoesBancarias()
-                        {
-                            Agencia = "1395",
-                            Conta = "256398",
-                            InstituicaoBancaria = "Bradesco"
-                        },
-                        Tipo = TipoPagamento.eFRETE,
-                        Valor = 0
-                    }
+                        Agencia = "1395",
+                        Conta = "256398",
+                        InstituicaoBancaria = "Bradesco"
+                    },
+                    Tipo = TipoPagamento.eFRETE,
+                    Valor = 0
                 }
             };
 
