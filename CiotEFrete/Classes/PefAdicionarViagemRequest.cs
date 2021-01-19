@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace CiotEFrete.Classes
 {
-    [DFeRoot("AdicionarViagemRequest ", Namespace = "http://schemas.ipc.adm.br/efrete/motoristas/objects")]
+    [DFeRoot("AdicionarViagemRequest ", Namespace = "http://schemas.ipc.adm.br/efrete/pef/objects")]
     public sealed class PefAdicionarViagemRequest : DFeDocument<PefAdicionarViagemRequest>, INotifyPropertyChanged
     {
         #region Eventos
@@ -60,8 +60,11 @@ namespace CiotEFrete.Classes
         [DFeElement(TipoCampo.Int, "Versao", Namespace = "http://schemas.ipc.adm.br/efrete/objects", Ocorrencia = Ocorrencia.Obrigatoria, Ordem = 5)]
         public int Versao { get; set; }
 
-        [DFeElement("Viagens", Namespace = "http://schemas.ipc.adm.br/efrete/objects", Ocorrencia = Ocorrencia.NaoObrigatoria, Ordem = 6)]
+        [DFeElement("Viagens", Namespace = "http://schemas.ipc.adm.br/efrete/pef/AdicionarViagem", Ocorrencia = Ocorrencia.NaoObrigatoria, Ordem = 6)]
         public PefAdicionarViagemViagens Viagens { get; set; }
+
+        [DFeElement("Pagamentos", Namespace = "http://schemas.ipc.adm.br/efrete/pef/AdicionarViagem", Ocorrencia = Ocorrencia.NaoObrigatoria, Ordem = 7)]
+        public PefAdicionarViagemPagamentos Pagamentos { get; set; }
 
         #endregion
     }

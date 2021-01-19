@@ -51,11 +51,8 @@ namespace CiotEFrete.Classes
         [DFeElement("NotasFiscais", Namespace = "http://schemas.ipc.adm.br/efrete/objects", Ocorrencia = Ocorrencia.NaoObrigatoria, Ordem = 6)]
         public PefAdicionarViagemNotasFiscais NotasFiscais { get; set; }
 
-        [DFeElement("Valores", Namespace = "http://schemas.ipc.adm.br/efrete/objects", Ocorrencia = Ocorrencia.NaoObrigatoria, Ordem = 7)]
+        [DFeElement("Valores", Namespace = "http://schemas.ipc.adm.br/efrete/pef/objects", Ocorrencia = Ocorrencia.NaoObrigatoria, Ordem = 7)]
         public PefAdicionarViagemValores Valores { get; set; }
-
-        [DFeElement("Pagamentos", Namespace = "http://schemas.ipc.adm.br/efrete/objects", Ocorrencia = Ocorrencia.NaoObrigatoria, Ordem = 8)]
-        public PefAdicionarViagemPagamentos Pagamentos { get; set; }
 
         #endregion
     }
