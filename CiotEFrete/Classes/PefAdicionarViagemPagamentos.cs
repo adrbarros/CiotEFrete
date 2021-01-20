@@ -22,7 +22,7 @@ namespace CiotEFrete.Classes
         [DFeIgnore]
         public CategoriaPagamento Categoria { get; set; }
 
-        [DFeElement(TipoCampo.Str, "Categoria", Ocorrencia = Ocorrencia.Obrigatoria, Ordem = 1)]
+        [DFeElement(TipoCampo.Str, "Categoria", Namespace = "http://schemas.ipc.adm.br/efrete/pef/objects", Ocorrencia = Ocorrencia.Obrigatoria, Ordem = 1)]
         public string CategoriaProxy
         {
             get
@@ -72,13 +72,13 @@ namespace CiotEFrete.Classes
         [DFeElement(TipoCampo.Str, "CnpjFilialAbastecimento", Ocorrencia = Ocorrencia.NaoObrigatoria, Ordem = 6)]
         public string CnpjFilialAbastecimento { get; set; }
 
-        [DFeElement("InformacoesBancarias", Namespace = "http://schemas.ipc.adm.br/efrete/objects", Ocorrencia = Ocorrencia.NaoObrigatoria, Ordem = 7)]
+        [DFeElement("InformacoesBancarias", Namespace = "http://schemas.ipc.adm.br/efrete/pef/objects", Ocorrencia = Ocorrencia.NaoObrigatoria, Ordem = 7)]
         public PefAdicionarPagamentoInformacoesBancarias InformacoesBancarias { get; set; }
 
         [DFeIgnore]
         public TipoPagamento Tipo { get; set; }
 
-        [DFeElement(TipoCampo.Str, "TipoPagamento", Ocorrencia = Ocorrencia.Obrigatoria, Ordem = 8)]
+        [DFeElement(TipoCampo.Str, "TipoPagamento", Namespace = "http://schemas.ipc.adm.br/efrete/pef/objects", Ocorrencia = Ocorrencia.Obrigatoria, Ordem = 8)]
         public string TipoProxy
         {
             get
